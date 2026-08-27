@@ -148,18 +148,27 @@
   )[Return])
 })
 
+#let money-caption = gblock(inset: 0.7em, outset: 0pt)[
+  Investors raise an *investment fund* from their customers and have *5--7 years* to return the principal plus interest.
+]
+
+// The diagram is drawn in fixed cetz units, so blow it up to fill the slide:
+// width-limited normally, height-limited if that would push the caption off.
 #align(horizon)[
-  #grid(
-    columns: (auto, 1fr),
-    column-gutter: 0.9em,
-    align: horizon,
-    money-flow,
-    // uncover, not #pause: inside a grid cell the space has to stay reserved or
-    // the diagram jumps sideways on the second subslide
-    uncover("2-", gblock(inset: 0.7em, outset: 0pt)[
-      Investors raise an *investment fund* from their customers and have *5--7 years* to return the principal plus interest.
-    ]),
-  )
+  #set block(spacing: 0pt)
+  #layout(size => {
+    let gap = 14pt
+    let f = calc.min(
+      size.width / measure(money-flow).width,
+      (size.height - gap - 12pt - measure(block(width: size.width, money-caption)).height)
+        / measure(money-flow).height,
+    )
+    scale(money-flow, x: f * 100%, y: f * 100%, origin: top + left, reflow: true)
+  })
+  #v(14pt)
+  // uncover, not #pause: the space has to stay reserved or the diagram jumps
+  // on the second subslide
+  #uncover("2-", money-caption)
 ]
 
 #speaker-note[

@@ -207,7 +207,10 @@
     align: horizon,
     align(right, survival),
     bracket((right: 1.2pt + accent)),
-    [because],
+    [
+      #pause
+      because
+    ],
     bracket((left: 1.2pt + accent)),
     align(left, causes),
     // ponytail: aside rides in the leftover column, so the chart keeps its own metrics
