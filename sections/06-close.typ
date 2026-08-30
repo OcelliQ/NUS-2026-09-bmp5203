@@ -165,7 +165,7 @@
         row-gutter: 0.5em,
         align: (right + horizon, right + horizon),
         [You charge], amount[\$1],
-        [They pay the lab], amount[\$10],
+        [You pay the lab], amount[\$10],
         [The lab spent], amount[\$50],
       )
     ]
@@ -173,7 +173,7 @@
     #v(0.55em)
     #text(
       size: 0.9em,
-    )[Forecast from first principles, not from today's sticker.]
+    )[Forecast prices from first principles.]
 
     #v(0.55em)
     #gblock(inset: 0.7em, outset: 0pt)[

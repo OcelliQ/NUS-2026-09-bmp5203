@@ -213,7 +213,7 @@
   column-gutter: 1.2em,
   align: top,
   [
-    *Well-defined modeling and actioning*
+    *Well-defined modeling*
     - Translate Business ↔ Math
     - Well-defined business question and action
     - Well-defined success metric.
@@ -221,6 +221,7 @@
     - Matches the available data.
   ],
   [
+    #pause
     *Institutional buy-in*
     - Measure ROI:
       - buy-in from management,
