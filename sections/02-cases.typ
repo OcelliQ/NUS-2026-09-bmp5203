@@ -160,10 +160,21 @@
     let gap = 14pt
     let f = calc.min(
       size.width / measure(money-flow).width,
-      (size.height - gap - 12pt - measure(block(width: size.width, money-caption)).height)
+      (
+        size.height
+          - gap
+          - 12pt
+          - measure(block(width: size.width, money-caption)).height
+      )
         / measure(money-flow).height,
     )
-    scale(money-flow, x: f * 100%, y: f * 100%, origin: top + left, reflow: true)
+    scale(
+      money-flow,
+      x: f * 100%,
+      y: f * 100%,
+      origin: top + left,
+      reflow: true,
+    )
   })
   #v(14pt)
   // uncover, not #pause: the space has to stay reserved or the diagram jumps
